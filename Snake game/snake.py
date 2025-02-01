@@ -49,3 +49,10 @@ class Snake:
         limb.penup()
         limb.goto(x=self.snake_body[-1].xcor(), y=self.snake_body[-1].ycor())
         self.snake_body.append(limb)
+    
+    def reset(self):
+        for part in self.snake_body:
+            part.goto(1000, 1000)
+        self.snake_body.clear()
+        self.create_snake()
+        self.head = self.snake_body[0]
